@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tratado de Sonidos Sanantes y Acupuntura Musical — Daniel Vallejo Novoa</title>
+<meta name="description" content="Referencia clínica que correlaciona los 12 tonos musicales con los 12 canales energéticos: 28 capítulos, 60 tríadas clínicas, 64 hexagramas y Apéndice B.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#132A3E;
+    --ink-soft:#2E4A63;
+    --teal:#1E6E68;
+    --teal-deep:#12504B;
+    --paper:#F6F7F4;
+    --paper-raised:#FFFFFF;
+    --line:#DDE3DF;
+    --vermilion:#B23A2E;
+    --text:#3C4A52;
+    --text-mute:#6B7A80;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Source Serif 4', Georgia, serif;
+    color:var(--ink);
+    margin:0 0 0.5em;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
+  a{color:inherit}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* ── Nav ───────────────────────────────────────── */
+  header.nav{
+    position:sticky; top:0; z-index:500;
+    background:rgba(246,247,244,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:920px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-family:'Source Serif 4',serif; font-weight:600; font-size:1.05rem; color:var(--ink);}
+  .brand small{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;color:var(--text-mute);text-transform:uppercase;margin-top:1px;}
+  .nav-cta{
+    background:var(--teal); color:#fff; border:none; padding:9px 18px;
+    border-radius:3px; font-family:'IBM Plex Sans'; font-size:0.85rem; font-weight:500;
+    cursor:pointer;
+  }
+  .nav-cta:hover{background:var(--teal-deep);}
+
+  /* ── Pulse divider (firma visual: pulso clínico ↔ pentagrama) ── */
+  .pulse{width:100%;height:44px;display:block;margin:8px 0;}
+  .pulse path{fill:none;stroke:var(--teal);stroke-width:1.6;}
+  .pulse .staff{stroke:var(--line);stroke-width:1;}
+
+  /* ── Hero ──────────────────────────────────────── */
+  .hero{padding:76px 0 40px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--teal-deep); margin-bottom:18px; display:block;
+  }
+  .hero h1{font-size:clamp(2rem, 4.4vw, 3.05rem); font-weight:600; line-height:1.12; max-width:15ch;}
+  .hero p.lede{font-size:1.12rem; color:var(--text); max-width:56ch; margin:20px 0 30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px;}
+  .btn-primary{
+    background:var(--ink); color:#fff; border:none; padding:14px 26px;
+    font-family:'IBM Plex Sans'; font-size:0.95rem; font-weight:500; border-radius:3px; cursor:pointer;
+  }
+  .btn-primary:hover{background:var(--teal-deep);}
+  .btn-secondary{
+    background:transparent; color:var(--ink); border:1px solid var(--ink-soft); padding:13px 24px;
+    font-family:'IBM Plex Sans'; font-size:0.95rem; border-radius:3px; cursor:pointer;
+  }
+  .btn-secondary:hover{border-color:var(--teal); color:var(--teal-deep);}
+
+  .stat-row{
+    display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .stat{padding:20px 14px 20px 0; border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat b{display:block; font-family:'IBM Plex Mono',monospace; font-size:1.7rem; color:var(--ink); font-weight:600;}
+  .stat span{font-size:0.78rem; color:var(--text-mute);}
+
+  /* ── Sections ──────────────────────────────────── */
+  section{padding:56px 0;}
+  section.alt{background:var(--paper-raised); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .section-head{max-width:60ch; margin-bottom:34px;}
+  .section-head h2{font-size:1.7rem;}
+  .section-head p{color:var(--text-mute); font-size:1rem;}
+
+  .content-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .content-card{background:var(--paper-raised); padding:24px;}
+  .content-card .num{font-family:'IBM Plex Mono',monospace; color:var(--teal-deep); font-size:0.78rem; margin-bottom:10px; display:block;}
+  .content-card h3{font-size:1.1rem; margin-bottom:8px;}
+  .content-card p{font-size:0.92rem; color:var(--text-mute); margin:0;}
+
+  .audience-list{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+  .audience-list li{
+    display:flex; gap:14px; align-items:flex-start; padding-bottom:14px; border-bottom:1px solid var(--line);
+  }
+  .audience-list li:last-child{border-bottom:none;}
+  .dot{flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:var(--vermilion); margin-top:7px;}
+  .audience-list strong{color:var(--ink); font-weight:600;}
+
+  .method-steps{counter-reset:step; display:grid; gap:0;}
+  .method-step{
+    display:grid; grid-template-columns:52px 1fr; gap:16px; padding:18px 0; border-top:1px solid var(--line);
+  }
+  .method-step:last-child{border-bottom:1px solid var(--line);}
+  .method-step .idx{font-family:'IBM Plex Mono',monospace; color:var(--text-mute); font-size:0.85rem; padding-top:2px;}
+  .method-step h3{font-size:1.02rem; margin-bottom:4px;}
+  .method-step p{margin:0; font-size:0.92rem; color:var(--text-mute);}
+
+  /* ── Pricing ───────────────────────────────────── */
+  .price-box{
+    background:var(--ink); color:#fff; border-radius:6px; padding:38px 34px; display:flex;
+    flex-direction:column; gap:18px; max-width:520px;
+  }
+  .price-box h2{color:#fff; font-size:1.4rem;}
+  .price-box .amount{font-family:'IBM Plex Mono',monospace; font-size:2.4rem; font-weight:600;}
+  .price-box p{color:#CBD8D6; font-size:0.92rem; margin:0;}
+  .price-box .btn-primary{background:var(--teal); align-self:flex-start;}
+  .price-box .btn-primary:hover{background:#249089;}
+  #ventaPayError{color:#ffb4a8; font-size:0.85rem; min-height:1.2em;}
+
+  /* ── FAQ ───────────────────────────────────────── */
+  .faq-item{border-top:1px solid var(--line); padding:18px 0;}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item h3{font-size:1rem; margin-bottom:6px; font-weight:600; color:var(--ink);}
+  .faq-item p{margin:0; font-size:0.92rem; color:var(--text-mute);}
+
+  .disclaimer{
+    font-size:0.8rem; color:var(--text-mute); max-width:70ch; border-left:2px solid var(--vermilion);
+    padding-left:14px; margin-top:10px;
+  }
+
+  footer{padding:36px 0 60px; font-size:0.82rem; color:var(--text-mute);}
+  footer a{color:var(--teal-deep); text-decoration:none;}
+
+  @media (max-width:680px){
+    .stat-row{grid-template-columns:1fr 1fr;}
+    .stat:nth-child(2){border-right:none;}
+    .content-grid{grid-template-columns:1fr;}
+  }
+
+  /* Modal (reutiliza el mismo flujo real de cuenta/pago del backend) */
+  #essamAuthModal{display:none;position:fixed;inset:0;background:rgba(19,42,62,.55);z-index:10000;align-items:center;justify-content:center;}
+  #essamAuthModal .box{background:#fff;border-radius:8px;padding:26px 28px;max-width:420px;width:90%;position:relative;font-family:'IBM Plex Sans',sans-serif;}
+  #essamAuthModal .box h3{font-family:'Source Serif 4',serif;}
+  #essamAuthModal input{border:1px solid var(--line); border-radius:3px;}
+  #essamAuthModal button{background:var(--teal); color:#fff; border:none; padding:10px 16px; border-radius:3px; cursor:pointer; font-family:'IBM Plex Sans';}
+  #essamAuthModal button:hover{background:var(--teal-deep);}
+  #essamAuthModal .close{position:absolute;top:10px;right:14px;cursor:pointer;font-size:1.3rem;color:var(--text-mute);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Sonidos Sanantes<br><small>Acupuntura Musical · Tratado clínico</small></div>
+    <button class="nav-cta" onclick="essamOpenAuthModal('register')">Comprar acceso</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow">Tratado de referencia — Daniel Vallejo Novoa</span>
+    <h1>Los 12 tonos y los 12 canales, correlacionados con rigor clínico.</h1>
+    <p class="lede">Un tratado de consulta para quienes ya trabajan con acupuntura o Medicina Tradicional China y buscan incorporar el sonido como herramienta clínica adicional — no un curso introductorio de bienestar.</p>
+
+    <svg class="pulse" viewBox="0 0 900 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line class="staff" x1="0" y1="10" x2="900" y2="10"/>
+      <line class="staff" x1="0" y1="18" x2="900" y2="18"/>
+      <line class="staff" x1="0" y1="26" x2="900" y2="26"/>
+      <path d="M0,22 L260,22 L280,4 L300,40 L320,22 L640,22 L660,4 L680,40 L700,22 L900,22"/>
+    </svg>
+
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="essamOpenAuthModal('register')">Comprar acceso completo</button>
+      <button class="btn-secondary" onclick="document.getElementById('contenido').scrollIntoView({behavior:'smooth'})">Ver el contenido</button>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><b>28</b><span>Capítulos</span></div>
+      <div class="stat"><b>60</b><span>Tríadas clínicas</span></div>
+      <div class="stat"><b>64</b><span>Hexagramas</span></div>
+      <div class="stat"><b>Apéndice&nbsp;B</b><span>Material de referencia</span></div>
+    </div>
+  </section>
+
+  <!-- QUÉ ES -->
+  <section>
+    <div class="section-head">
+      <h2>Qué es este tratado</h2>
+      <p>Una obra de consulta, no una app de meditación.</p>
+    </div>
+    <p>El tratado desarrolla, capítulo por capítulo, la correspondencia entre los doce tonos de la escala y los doce canales energéticos descritos por la Medicina Tradicional China, con el mismo nivel de detalle que un texto clásico de acupuntura dedica a los puntos y meridianos.</p>
+    <p>Cada tríada clínica documenta una combinación de tonos pensada como complemento a un cuadro o patrón determinado. Los 64 hexagramas del I Ching se usan como marco de referencia adicional para leer el momento energético del paciente. El Apéndice B reúne tablas de correspondencia para consulta rápida durante la sesión.</p>
+    <p class="disclaimer">Este material es un marco teórico y de consulta dirigido a profesionales; no sustituye el diagnóstico ni el tratamiento médico, y la aplicación clínica queda siempre a criterio del profesional que la usa.</p>
+  </section>
+
+  <!-- CONTENIDO -->
+  <section class="alt" id="contenido">
+    <div class="section-head">
+      <h2>Contenido del tratado</h2>
+      <p>Cuatro cuerpos de material, pensados para usarse juntos.</p>
+    </div>
+    <div class="content-grid">
+      <div class="content-card">
+        <span class="num">01 · CAPÍTULOS</span>
+        <h3>Los 28 capítulos</h3>
+        <p>Desarrollo teórico completo: fundamentos de la correspondencia tono-canal, escalas, órganos y su lectura energética.</p>
+      </div>
+      <div class="content-card">
+        <span class="num">02 · TRÍADAS</span>
+        <h3>60 tríadas clínicas</h3>
+        <p>Combinaciones documentadas de tonos por patrón clínico, con su protocolo de tonificación / dispersión.</p>
+      </div>
+      <div class="content-card">
+        <span class="num">03 · HEXAGRAMAS</span>
+        <h3>64 hexagramas</h3>
+        <p>El I Ching aplicado como marco de lectura complementario del estado energético.</p>
+      </div>
+      <div class="content-card">
+        <span class="num">04 · APÉNDICE B</span>
+        <h3>Tablas de referencia</h3>
+        <p>Correspondencias condensadas para tenerlas a mano durante la consulta, sin releer el capítulo completo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section>
+    <div class="section-head">
+      <h2>Para quién es</h2>
+    </div>
+    <ul class="audience-list">
+      <li><span class="dot"></span><div><strong>Acupunturistas y practicantes de Medicina Tradicional China</strong> que quieren sumar el sonido como herramienta adicional dentro de un marco que ya conocen.</div></li>
+      <li><span class="dot"></span><div><strong>Terapeutas de sonido y musicoterapeutas</strong> que buscan un fundamento teórico más riguroso que las guías genéricas de "sanación con sonido".</div></li>
+      <li><span class="dot"></span><div><strong>Estudiantes avanzados de Medicina China</strong> interesados en las correspondencias energéticas menos convencionales.</div></li>
+    </ul>
+  </section>
+
+  <!-- CÓMO SE USA -->
+  <section class="alt">
+    <div class="section-head">
+      <h2>Cómo está organizado</h2>
+    </div>
+    <div class="method-steps">
+      <div class="method-step"><div class="idx mono">01</div><div><h3>Ubicar el patrón</h3><p>Se identifica el patrón clínico o canal de interés desde el buscador o el índice de tríadas.</p></div></div>
+      <div class="method-step"><div class="idx mono">02</div><div><h3>Leer la tríada correspondiente</h3><p>Cada tríada indica los tonos implicados y el protocolo de tonificación / dispersión asociado.</p></div></div>
+      <div class="method-step"><div class="idx mono">03</div><div><h3>Contrastar con el hexagrama</h3><p>El hexagrama asociado ofrece una segunda lectura, complementaria a la lectura por canal.</p></div></div>
+      <div class="method-step"><div class="idx mono">04</div><div><h3>Consultar el Apéndice B</h3><p>Para uso repetido en consulta, sin releer el capítulo completo cada vez.</p></div></div>
+    </div>
+  </section>
+
+  <!-- PRECIO -->
+  <section id="comprar">
+    <div class="section-head">
+      <h2>Acceso</h2>
+      <p>Compra única. Sin suscripción.</p>
+    </div>
+    <div class="price-box">
+      <h2>Versión completa</h2>
+      <div class="amount mono" id="ventaPriceAmount">···</div>
+      <p>Incluye los 28 capítulos, las 60 tríadas clínicas, los 64 hexagramas y el Apéndice B, disponibles en la app en cualquiera de tus dispositivos (hasta 2 activos por cuenta).</p>
+      <button class="btn-primary" onclick="essamOpenAuthModal('register')">Comprar acceso completo</button>
+      <div id="ventaPayError"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt">
+    <div class="section-head"><h2>Preguntas frecuentes</h2></div>
+    <div class="faq-item"><h3>¿Esto reemplaza el diagnóstico médico?</h3><p>No. Es material de referencia teórica dirigido a profesionales; no sustituye la evaluación, el diagnóstico ni el tratamiento de un médico o terapeuta certificado.</p></div>
+    <div class="faq-item"><h3>¿En qué dispositivos funciona?</h3><p>La app funciona en navegador y se puede instalar en Windows, macOS, Android e iOS desde la misma cuenta, con hasta 2 dispositivos activos simultáneos.</p></div>
+    <div class="faq-item"><h3>¿El pago es único o es una suscripción?</h3><p>Es una compra única. El acceso queda ligado a tu cuenta, no a un pago recurrente.</p></div>
+    <div class="faq-item"><h3>¿Necesito conocimientos previos de Medicina China?</h3><p>El tratado está escrito para quien ya tiene una base en acupuntura o MTC. No es un curso introductorio.</p></div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Tratado de Sonidos Sanantes y Acupuntura Musical — Daniel Vallejo Novoa.</p>
+  <p>Contenido con fines educativos y de referencia clínica; no constituye consejo médico. · <a href="index.html">Ir a la app</a></p>
+</footer>
+
+<!-- Modal de cuenta / pago — mismo backend real que la app (server.js) -->
+<div id="essamAuthModal">
+  <div class="box">
+    <span class="close" onclick="essamCloseAuthModal()">&times;</span>
+    <div id="essamAuthModalBody"></div>
+  </div>
+</div>
+
+<script>
+  // Precio en la sección de arriba de la página (fuera del modal), mismo
+  // endpoint público que usa la app — si el servidor no está corriendo,
+  // se avisa en vez de dejar "···" para siempre.
+  fetch('/api/price').then(r => r.json()).then(p => {
+    const el = document.getElementById('ventaPriceAmount');
+    if (el) el.textContent = `$${parseFloat(p.amount).toFixed(0)} ${p.currency}`;
+  }).catch(() => {
+    const el = document.getElementById('ventaPriceAmount');
+    if (el) { el.textContent = 'No disponible'; el.style.fontSize = '1rem'; }
+    const err = document.getElementById('ventaPayError');
+    if (err) err.textContent = 'No se pudo contactar al servidor de pagos. Vuelve a intentarlo más tarde.';
+  });
+</script>
+<script src="js/core/auth-client.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+/* ♭ ♯ FIX: force accidentals to ALWAYS use a safe system font (never Cinzel/Garamond
+   which render ♭ as uppercase B). The @font-face unicode-range trick overrides
+   the glyph lookup for U+266D/266F in every font stack across the whole document. */
+@font-face {
+  font-family: 'SafeAccidentals';
+  src: local('Arial Unicode MS'), local('Segoe UI'), local('Arial'), local('sans-serif');
+  unicode-range: U+266D, U+266F, U+266E;
+}
+/* Prepend SafeAccidentals to every font stack */
+* {
+  font-family: 'SafeAccidentals', inherit !important;
+}
+/* Re-declare the intended stacks with SafeAccidentals first */
+body, p, div, span, td, th, li, option, input, select, textarea, button {
+  font-family: 'SafeAccidentals', 'EB Garamond', Georgia, serif !important;
+}
+.nav-brand, h1, h2, h3, .page-title, .page-subtitle,
+.hero-title, .ornament span, .sc-head, .scale-name,
+.cd-name, .fc-title, .triadas-index-title, .td-row-header,
+.op-section-label, .op-mixer-title, .chapter-title, .book-title,
+[class*="cinzel"] {
+  font-family: 'SafeAccidentals', 'Cinzel', serif !important;
+}

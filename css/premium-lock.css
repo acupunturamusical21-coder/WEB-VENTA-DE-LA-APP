@@ -1,0 +1,165 @@
+/* ═══════════════════════════════════════════════════════════════
+   Candados de contenido Premium — ESSAM
+   ═══════════════════════════════════════════════════════════════ */
+
+.essam-lock-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(20, 14, 8, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.essam-lock-box {
+  max-width: 420px;
+  text-align: center;
+  background: rgba(255, 248, 230, 0.06);
+  border: 1px solid rgba(252, 211, 77, 0.35);
+  border-radius: 14px;
+  padding: 2.2rem 1.8rem;
+  color: #f2e7cf;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.essam-lock-icon { font-size: 2.4rem; margin-bottom: 0.5rem; }
+
+.essam-lock-box h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.6rem;
+  color: #fcd34d;
+}
+
+.essam-lock-box p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.9;
+  margin: 0 0 1.2rem;
+}
+
+.essam-lock-btn {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.65rem 1.6rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.essam-lock-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(124,58,237,0.4); }
+
+/* Bloqueo parcial en recuadros individuales (ej. módulos TONIFICAR/DISPERSAR) */
+.essam-inline-lock {
+  position: relative;
+  cursor: pointer;
+}
+.essam-inline-lock .essam-inline-lock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: #fcd34d;
+  background: rgba(124,58,237,0.18);
+  border: 1px solid rgba(252,211,77,0.4);
+  border-radius: 14px;
+  padding: 0.3rem 0.7rem;
+  margin-top: 0.5rem;
+}
+
+/* Resultados del buscador en 'lite' (Iteración 6): el resultado (título,
+   síndrome, tríada, módulo) se ve igual que en 'full' — solo cambia que
+   el clic no navega, abre el aviso de compra. Se distingue con opacidad
+   reducida + candado, sin ocultar el texto del resultado. */
+.essam-search-locked {
+  opacity: 0.72;
+  cursor: pointer;
+}
+.essam-search-locked:hover { opacity: 0.9; }
+
+.essam-search-lock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: #fcd34d;
+  background: rgba(124,58,237,0.18);
+  border: 1px solid rgba(252,211,77,0.4);
+  border-radius: 12px;
+  padding: 0.2rem 0.55rem;
+  margin-top: 0.4rem;
+}
+
+/* ─────────────────────────────────────────────
+   Iteración 11 — banner de "esto es una demo" en Correspondencias,
+   Escalas y 12 Órganos cuando la cuenta no es premium. A diferencia del
+   overlay de sección completa (essam-lock-overlay), este va inline,
+   debajo del único ejemplo que sí se muestra.
+   ───────────────────────────────────────────── */
+.essam-demo-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1.2rem auto 0;
+  max-width: 480px;
+  background: rgba(255, 248, 230, 0.06);
+  border: 1px dashed rgba(252, 211, 77, 0.4);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.essam-demo-banner:hover { background: rgba(255, 248, 230, 0.1); }
+.essam-demo-banner-icon { font-size: 1.4rem; }
+.essam-demo-banner-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.04em;
+  color: #fcd34d;
+  font-size: 0.9rem;
+}
+.essam-demo-banner-sub { font-size: 0.78rem; opacity: 0.75; }
+.essam-demo-banner .essam-lock-btn { margin-left: auto; white-space: nowrap; }
+
+/* ─────────────────────────────────────────────
+   Iteración 7 — candado visible en pestañas del menú (nav-btn) y
+   tarjetas de Inicio (feature-card) para secciones 100% premium.
+   A propósito se deja visible el elemento (no se oculta): solo se
+   atenúa un poco y se le agrega el candado, para que se note que la
+   sección existe (upsell) sin mantener dos copias del HTML.
+   ───────────────────────────────────────────── */
+.essam-nav-locked { position: relative; opacity: 0.78; }
+.essam-nav-locked:hover { opacity: 1; }
+
+/* Pestaña del menú: candado chiquito pegado al texto */
+.nav-btn.essam-nav-locked .essam-nav-lock-badge {
+  display: inline-block;
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* Tarjeta de Inicio: candado como insignia flotante en la esquina */
+.feature-card.essam-nav-locked .essam-nav-lock-badge {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: rgba(124,58,237,0.2);
+  border: 1px solid rgba(252,211,77,0.45);
+  border-radius: 50%;
+  margin-left: 0;
+}
